@@ -17,9 +17,9 @@
   $datos_campos = [];
   ### generar json con los campos deseados
   foreach($result->results as $value){
-    $datos_campos['artistName'] = $value->artistName;
-    $datos_campos['primaryGenreName'] = $value->primaryGenreName;
-    $datos_campos['trackName'] = $value->trackName;
+    $datos_campos['artistName'] = $value->artistName ?? "";
+    $datos_campos['primaryGenreName'] = $value->primaryGenreName ?? "";
+    $datos_campos['trackName'] = $value->trackName ?? "";
     $datos_campos['previewUrl'] ="<audio src='$value->previewUrl' controls='controls' type='audio/mpeg' preload='none'></audio>" ;
     $output['data'][] = $datos_campos;
   }
